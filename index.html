@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲載事例集 - Webマガジン</title>
+    <style>
+        /* 基本的なスタイル設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ヘッダー部分 */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* フィルター部分 */
+        .filter-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        /* 事例カード部分 */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .case-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 3rem;
+        }
+
+        .case-content {
+            padding: 1.5rem;
+        }
+
+        .case-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .case-category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .case-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .case-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .pdf-link:hover {
+            background: #218838;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .filter-buttons {
+                justify-content: flex-start;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 隠す用のクラス */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>掲載事例集</h1>
+            <p class="subtitle">カテゴリ別に事例をご覧いただけます</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- フィルター部分 -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="business">ビジネス</button>
+                <button class="filter-btn" data-category="technology">テクノロジー</button>
+                <button class="filter-btn" data-category="lifestyle">ライフスタイル</button>
+                <button class="filter-btn" data-category="education">教育</button>
+                <button class="filter-btn" data-category="healthcare">ヘルスケア</button>
+            </div>
+        </div>
+
+        <!-- 事例一覧 -->
+        <div class="cases-grid" id="casesGrid">
+            <!-- 事例カード1 -->
+            <div class="case-card" data-category="business">
+                <div class="case-image">📊</div>
+                <div class="case-content">
+                    <h3 class="case-title">中小企業のDX推進事例</h3>
+                    <span class="case-category">ビジネス</span>
+                    <p class="case-description">従業員50名の製造業がデジタル化により業務効率を30%向上させた成功事例をご紹介します。</p>
+                    <p class="case-date">2024年3月掲載</p>
+                    <a href="pdfs/case001.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+
+            <!-- 事例カード2 -->
+            <div class="case-card" data-category="technology">
+                <div class="case-image">💻</div>
+                <div class="case-content">
+                    <h3 class="case-title">AI導入による業務自動化</h3>
+                    <span class="case-category">テクノロジー</span>
+                    <p class="case-description">AIチャットボット導入により、カスタマーサポート業務の70%を自動化した事例です。</p>
+                    <p class="case-date">2024年2月掲載</p>
+                    <a href="pdfs/case002.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+
+            <!-- 事例カード3 -->
+            <div class="case-card" data-category="lifestyle">
+                <div class="case-image">🏠</div>
+                <div class="case-content">
+                    <h3 class="case-title">リモートワーク環境の整備</h3>
+                    <span class="case-category">ライフスタイル</span>
+                    <p class="case-description">快適なホームオフィス環境を整備し、生産性を向上させる方法を詳しく解説します。</p>
+                    <p class="case-date">2024年1月掲載</p>
+                    <a href="pdfs/case003.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+
+            <!-- 事例カード4 -->
+            <div class="case-card" data-category="education">
+                <div class="case-image">🎓</div>
+                <div class="case-content">
+                    <h3 class="case-title">オンライン学習プラットフォーム活用</h3>
+                    <span class="case-category">教育</span>
+                    <p class="case-description">地方の小学校がオンライン学習を導入し、学習効果を向上させた取り組みをご紹介。</p>
+                    <p class="case-date">2023年12月掲載</p>
+                    <a href="pdfs/case004.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+
+            <!-- 事例カード5 -->
+            <div class="case-card" data-category="healthcare">
+                <div class="case-image">🏥</div>
+                <div class="case-content">
+                    <h3 class="case-title">テレメディシンの導入事例</h3>
+                    <span class="case-category">ヘルスケア</span>
+                    <p class="case-description">離島の診療所がオンライン診療を導入し、患者の利便性を大幅に向上させた事例です。</p>
+                    <p class="case-date">2023年11月掲載</p>
+                    <a href="pdfs/case005.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+
+            <!-- 事例カード6 -->
+            <div class="case-card" data-category="business">
+                <div class="case-image">💼</div>
+                <div class="case-content">
+                    <h3 class="case-title">スタートアップの資金調達戦略</h3>
+                    <span class="case-category">ビジネス</span>
+                    <p class="case-description">創業3年目のスタートアップが1億円の資金調達に成功した戦略を詳しく分析します。</p>
+                    <p class="case-date">2023年10月掲載</p>
+                    <a href="pdfs/case006.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // フィルター機能のJavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // フィルターボタンとカードを取得
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const caseCards = document.querySelectorAll('.case-card');
+
+            // 各フィルターボタンにクリックイベントを追加
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 現在アクティブなボタンからactiveクラスを削除
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // クリックされたボタンにactiveクラスを追加
+                    this.classList.add('active');
+
+                    // 選択されたカテゴリを取得
+                    const selectedCategory = this.getAttribute('data-category');
+
+                    // 各カードの表示・非表示を切り替え
+                    caseCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (selectedCategory === 'all' || selectedCategory === cardCategory) {
+                            // 表示する場合
+                            card.style.display = 'block';
+                            // アニメーション効果
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 100);
+                        } else {
+                            // 非表示にする場合
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
