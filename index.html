@@ -140,20 +140,20 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-      .case-info {
-    color: #888;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    padding: 8px;
-    background: #f8f9fa;
-    border-radius: 5px;
-    border-left: 3px solid #667eea;
-}
 
-.case-info span {
-    margin-right: 15px;
-}
+        .case-info {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
 
+        .case-info span {
+            margin-right: 15px;
+        }
 
         .pdf-link {
             display: inline-block;
@@ -186,6 +186,11 @@
             .cases-grid {
                 grid-template-columns: 1fr;
             }
+
+            .case-info span {
+                display: block;
+                margin-bottom: 5px;
+            }
         }
 
         /* 隠す用のクラス */
@@ -206,12 +211,12 @@
         <!-- フィルター部分 -->
         <div class="filter-section">
             <div class="filter-buttons">
-               <button class="filter-btn active" data-category="all">すべて</button>
-<button class="filter-btn" data-category="data">データ見える化</button>
-<button class="filter-btn" data-category="story">企業ストーリー</button>
-<button class="filter-btn" data-category="perspective">独自視点</button>
-<button class="filter-btn" data-category="anniversary">周年記念</button>
-<button class="filter-btn" data-category="presentation">読む会社説明会</button>
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="data">データ見える化</button>
+                <button class="filter-btn" data-category="story">企業ストーリー</button>
+                <button class="filter-btn" data-category="perspective">独自視点</button>
+                <button class="filter-btn" data-category="anniversary">周年記念</button>
+                <button class="filter-btn" data-category="presentation">読む会社説明会</button>
             </div>
         </div>
 
@@ -219,46 +224,51 @@
         <div class="cases-grid" id="casesGrid">
             <!-- 事例カード1 -->
             <div class="case-card" data-category="perspective">
-    <div class="case-image">🛰️</div>
-    <div class="case-content">
-        <h3 class="case-title">防災・環境・社会基盤の「空間情報コンサルタント」</h3>
-        <span class="case-category">独自視点</span>
-        <p class="case-description">アジア航測が70年の技術で社会基盤における防災・環境・空間情報コンサルタント事業を展開している事例</p>
-      <p class="case-date">2024年12月掲載</p>
-<div class="case-info">
-    <span>証券コード: 9233</span>
-    <span>時価総額: 213億円（2024年9月末）</span>
-</div>
-<a href="pdfs/case001.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                <div class="case-image">🛰️</div>
+                <div class="case-content">
+                    <h3 class="case-title">防災・環境・社会基盤の「空間情報コンサルタント」</h3>
+                    <span class="case-category">独自視点</span>
+                    <p class="case-description">アジア航測が70年の技術で社会基盤における防災・環境・空間情報コンサルタント事業を展開している事例</p>
+                    <p class="case-date">2024年12月掲載</p>
+                    <div class="case-info">
+                        <span>証券コード: 9233</span>
+                        <span>時価総額: 213億円（2024年9月末）</span>
+                    </div>
+                    <a href="pdfs/case001.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
 
-
-
-
-
-            
             <!-- 事例カード2 -->
-           <div class="case-card" data-category="perspective">
-    <div class="case-image">💫</div>
-    <div class="case-content">
-        <h3 class="case-title">「無限の夢を創造する」社名に込められた普遍的価値を追求</h3>
-        <span class="case-category">独自視点</span>
-        <p class="case-description">システム・アイ・ディが1997年の設立から2018年上場まで、独自のビジネスモデルで存在感を高めた成長事例</p>
-        <p class="case-date">2025年2月掲載</p>
-        <a href="pdfs/case002.pdf" class="pdf-link" target="_blank">PDFを見る</a>
-    </div>
-</div>
+            <div class="case-card" data-category="perspective">
+                <div class="case-image">💫</div>
+                <div class="case-content">
+                    <h3 class="case-title">「無限の夢を創造する」社名に込められた普遍的価値を追求</h3>
+                    <span class="case-category">独自視点</span>
+                    <p class="case-description">システム・アイ・ディが1997年の設立から2018年上場まで、独自のビジネスモデルで存在感を高めた成長事例</p>
+                    <p class="case-date">2025年2月掲載</p>
+                    <div class="case-info">
+                        <span>証券コード: 4421</span>
+                        <span>時価総額: 25億円（2024年9月末）</span>
+                    </div>
+                    <a href="pdfs/case002.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
 
             <!-- 事例カード3 -->
             <div class="case-card" data-category="anniversary">
-    <div class="case-image">🎉</div>
-    <div class="case-content">
-        <h3 class="case-title">創業80周年を迎え新たな未来へ</h3>
-        <span class="case-category">周年記念</span>
-        <p class="case-description">帝国通信工業が創業80周年を迎え、抵抗器のNOBLEから新生NOBLEへの深化と進化を目指す未来像</p>
-        <p class="case-date">2025年2月掲載</p>
-        <a href="pdfs/case003.pdf" class="pdf-link" target="_blank">PDFを見る</a>
-    </div>
-</div>
+                <div class="case-image">🎉</div>
+                <div class="case-content">
+                    <h3 class="case-title">創業80周年を迎え新たな未来へ</h3>
+                    <span class="case-category">周年記念</span>
+                    <p class="case-description">帝国通信工業が創業80周年を迎え、抵抗器のNOBLEから新生NOBLEへの深化と進化を目指す未来像</p>
+                    <p class="case-date">2025年2月掲載</p>
+                    <div class="case-info">
+                        <span>証券コード: 6763</span>
+                        <span>時価総額: 225億円（2025年3月末）</span>
+                    </div>
+                    <a href="pdfs/case003.pdf" class="pdf-link" target="_blank">PDFを見る</a>
+                </div>
+            </div>
 
             <!-- 事例カード4 -->
             <div class="case-card" data-category="anniversary">
