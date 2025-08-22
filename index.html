@@ -106,6 +106,19 @@
             justify-content: center;
             color: #666;
             font-size: 3rem;
+            padding: 20px;
+        }
+
+        .case-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+
+        .case-card:hover .case-image img {
+            filter: grayscale(0%);
         }
 
         .case-content {
@@ -224,7 +237,9 @@
         <div class="cases-grid" id="casesGrid">
             <!-- 事例カード1 -->
             <div class="case-card" data-category="perspective">
-                <div class="case-image">🛰️</div>
+                <div class="case-image">
+                    <img src="logos/ajiko_logo.png" alt="アジア航測ロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🛰️'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">防災・環境・社会基盤の「空間情報コンサルタント」</h3>
                     <span class="case-category">独自視点</span>
@@ -242,7 +257,9 @@
 
             <!-- 事例カード2 -->
             <div class="case-card" data-category="perspective">
-                <div class="case-image">💫</div>
+                <div class="case-image">
+                    <img src="logos/disystem_logo.png" alt="システム・アイ・ディロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='💫'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">「無限の夢を創造する」社名に込められた普遍的価値を追求</h3>
                     <span class="case-category">独自視点</span>
@@ -260,7 +277,9 @@
 
             <!-- 事例カード3 -->
             <div class="case-card" data-category="anniversary">
-                <div class="case-image">🎉</div>
+                <div class="case-image">
+                    <img src="logos/teikoku_logo.png" alt="帝国通信工業ロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🎉'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">創業80周年を迎え新たな未来へ</h3>
                     <span class="case-category">周年記念</span>
@@ -278,7 +297,9 @@
 
             <!-- 事例カード4 -->
             <div class="case-card" data-category="story">
-                <div class="case-image">🌏</div>
+                <div class="case-image">
+                    <img src="logos/generalpacker_logo.png" alt="ゼネラルパッカーロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🌏'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">海外市場を切り開く</h3>
                     <span class="case-category">企業ストーリー</span>
@@ -296,7 +317,9 @@
 
             <!-- 事例カード5 -->
             <div class="case-card" data-category="perspective">
-                <div class="case-image">🚗</div>
+                <div class="case-image">
+                    <img src="logos/hagiwara_logo.png" alt="萩原電気ホールディングスロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🚗'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">自動車産業向け半導体商社として培った知見と技術力で未来の車づくり・製造現場づくりに貢献</h3>
                     <span class="case-category">独自視点</span>
@@ -314,7 +337,9 @@
 
             <!-- 事例カード6 -->
             <div class="case-card" data-category="presentation">
-                <div class="case-image">✈️</div>
+                <div class="case-image">
+                    <img src="logos/agp_logo.png" alt="エージーピーロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='✈️'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">空港の「安全性・快適性」を支える「見えないインフラ」への誇りと責任</h3>
                     <span class="case-category">読む会社説明会</span>
@@ -332,7 +357,9 @@
 
             <!-- 事例カード7 -->
             <div class="case-card" data-category="data">
-                <div class="case-image">📊</div>
+                <div class="case-image">
+                    <img src="logos/konoike_logo.png" alt="鴻池運輸ロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='📊'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">データで浮かぶ強みと特徴</h3>
                     <span class="case-category">データ見える化</span>
@@ -350,7 +377,9 @@
 
             <!-- 事例カード8 -->
             <div class="case-card" data-category="presentation">
-                <div class="case-image">🏪</div>
+                <div class="case-image">
+                    <img src="logos/kannanmaru_logo.png" alt="かんなん丸ロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🏪'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">事業ポートフォリオ組み換えで構造改革進行</h3>
                     <span class="case-category">読む会社説明会</span>
@@ -368,7 +397,9 @@
 
             <!-- 事例カード9 -->
             <div class="case-card" data-category="presentation">
-                <div class="case-image">🏗️</div>
+                <div class="case-image">
+                    <img src="logos/daidan_logo.png" alt="ダイダンロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🏗️'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">建物の「いのち」をつくる創業120年超の総合エンジニアリング企業</h3>
                     <span class="case-category">読む会社説明会</span>
@@ -386,7 +417,9 @@
 
             <!-- 事例カード10 -->
             <div class="case-card" data-category="presentation">
-                <div class="case-image">🍱</div>
+                <div class="case-image">
+                    <img src="logos/hurxley_logo.png" alt="ハークスレイロゴ" onerror="this.style.display='none'; this.parentNode.innerHTML='🍱'">
+                </div>
                 <div class="case-content">
                     <h3 class="case-title">「ほっかほっか亭」から「食のインテグレーション企業」へ成長投資による事業領域拡大</h3>
                     <span class="case-category">読む会社説明会</span>
